@@ -13,7 +13,7 @@ Continuous Delivery or Continuous deployment aims to building, testing and relea
 
 In this project, we use a PHP web application that uses a  MySQL database. This code is modified using Cloud9 . We deploy the application in Elastic Beanstalk and use Codepipeline which is deployed using Git where we make the changes to the code. Below figure 1 shows the architecture of the project.
 
- 
+![Image 1](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/1.png)
 Figure 1: Architecture of the project
 
 We further use AWS CloudWatch to generate the alerts of the applications health.
@@ -39,47 +39,47 @@ We will now deploy the application into Elastic Beanstalk. We will have builder 
 
 <h2> Screenshots of the project </h2>
 
- 
+![Image 2](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/2.png)
 Figure 2:Creating the Elastic Beanstalk Application.
 
 We further add the database configurations as shown in figure 3.
 
- 
+![Image 3](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/3.png)
 Figure 3: Database configuration while creating an Elastic Beanstalk Application.
 This should launch a sample application as we did not deploy our application. Figure 4 is the screenshot of the application launched.
 
- 
+![Image 4](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/4.png)
 Figure 4: Sample Application Launched in AWS Elastic Beanstalk
 
 Now we will zip the code files and upload it to the Elastic Beanstalk Application. After Uploading, it will automatically deploy the Elastic Beanstalk Application. After the Deployment is completed, it will show the Application Environment as in Figure 5.
 
- 
+![Image 5](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/5.png) 
 Figure 5: Health Status of Elastic Beanstalk environment after deploying the PHP Web Application.
 
 When you click on the url available in the Elastic Beanstalk Environment, the following application Page should open as shown in Figure 6.
 
- 
+![Image 6](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/6.png) 
 Figure 6: PHP Web Application launched on AWS ELastic Beanstalk.
 We use Elastic Beanstalk extensions to run custom scripts. We then use the same procedure to add a new environment called Production to the Application created in Beanstalk. We use the same procedure like we created the Beta Application. In the versions section of Elastic Beanstalk, you can check the versions of code deployed into the Beanstalk. Figure 7 shows the different versions of code deployed.
 
- 
+![Image 7](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/7.png) 
 Figure 7: Application Versions of Code deployed in Elastic Beanstalk.
 
 Setting a CI/CD pipeline using AWS CodePipeline:
 We first commit all the code in Github. Below is the link of the code in Github.
 https://github.com/DivyaSamragniNadakuditi/fuzzy-telegram
 
- 
+![Image 8](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/8.png)
 Figure 8: Code in Github.
 
 Now Create a new Codepipeline. Figure 9 shows the creation of new pipeline for our Application.
- 
+![Image 9](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/9.png)
 Figure 9 : Pipeline Creation for our Application.
 
 Also set the Deployment to Elastic Beanstalk.
- 
+![Image 10](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/10.png) 
 Figure 10: Source Provider details
-
+![Image 11](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/10b.png)
  
 
 Webhooks to detect deployment changes: -
@@ -91,28 +91,28 @@ A webhook listens for a specific event published by a device. When this event is
 
 
 
- 
+![Image 12](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/11.png) 
 Figure 11: Deployment details
 
 Below are the Figures of the Codepipeline Created Build and Deployed.
 
- 
+![Image 13](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/12.png)
 Figure 12: Codepipeline Successfully Build.
 
- 
+![Image 14](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/13.png)
 Figure 13: Deployment Successful.
 
 We further add a stage called Production.
- 
+![Image 15](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/14.png)
 Figure 14: Adding new stage called Production
 
 
-
-
 We have added cloud watch, to analyses the health of deployed Elastic Beans stalk environments and SNS notifications. Also this logs are stored in S3 bucket.
- 
+
+![Image 16](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/14b.png)
 Fig 14. Adding Lambda function to check the health status of ElasticBeanstalk.
- 
+
+![Image 17](https://github.com/DivyaSamragniNadakuditi/Continouse-Integration-and-Continouse-Deployment-using-AWS/blob/master/images/15.png)
 Fig 15. This is an email notification sent to client.
 
 
